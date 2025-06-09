@@ -1,3 +1,0 @@
-We’ll switch to Python 3.8 to match the blis wheel and ensure better compatibility.
-
-3.8
