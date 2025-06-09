@@ -1,8 +1,13 @@
 import streamlit as st
 import spacy
+from spacy.cli import download
 
-# Load the spaCy model
-nlp = spacy.load("en_core_web_sm")
+# Load model or download if missing
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 # Streamlit app
 st.title("Meeting Notes Summarizer")
